@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+    <center>
+        <label class="text-dark p-5 ">
+        <h1 class="text-uppercase text-warning fw-bold">{{post.title}}</h1>
+        <h4 class="fst-italic">{{post.subtitle}}</h3>
+        <h5 class="fw-light">Posted by: {{post.author}} on: {{post.date_posted.strftime('%B-%d-%Y')}}</h5>
+        <div class="shadow-lg p-3 mb-5  w-50 bg-body rounded" >
+            <p class="lead">{{post.content}}</p>
+        </div>
+    </label>
+    </center>
+{% endblock content %}
+    

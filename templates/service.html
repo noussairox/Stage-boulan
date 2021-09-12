@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block content %}
+<br>
+<div class="alert alert-warning">
+    <h4 style="text-align: center;"></p> <strong> Vous devez choisir le Service que vous voulez !</strong></h4> 
+</div>
+<label class="box container d-flex justify-content-between">
+    <div class="card" style="width: 40%;">
+        <img src="/static/images/3.jpeg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Service 1</h5>
+          <p class="card-text">Travaux divers et construction</p>
+        </div>
+      </div>
+      <div class="card" style="width: 40%;">
+        <img src="/static/images/5.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Service 2</h5>
+          <p class="card-text">Nettoyage de fin de chantier</p>
+        </div>
+      </div>
+</label>
+<br>
+<center>
+    {% for message in get_flashed_messages() %}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    {{ message }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+{% endfor %}
+<div class="container">
+    <button type="submit" class="btn btn-large btn-block btn-warning" onclick="show_hide()"></span><b>Cliquez ici pour Choisir le Service</b></button><br><br>
+</div>
+
+<div class="shadow-lg p-3 mb-5  w-75 bg-body rounded" id="myform" >
+    <form method="POST">
+        <div class="mb-3">
+            <label for="exampleFormControlTextareal1" class="form-label">Nom</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="your name" name="name">
+          </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="your address email" name="email">
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextareal1" class="form-label">Num de Téléphone</label>
+            <input type="tel" class="form-control" id="exampleFormControlInput1" placeholder="0X XX XX XX XX " name="phone">
+          </div>
+          <select class="form-select" aria-label="Default select example" type="number" name="modele">
+            <option selected>Selectionner votre service</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+          </select><br>
+          <div class="col-12">
+            <button class="btn btn-primary" type="submit">Envoyez</button>
+          </div>         
+    </form>
+</div>
+</center>
+{% endblock content %}
+    
